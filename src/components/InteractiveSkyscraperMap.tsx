@@ -115,7 +115,7 @@ export function InteractiveSkyscraperMap() {
   useEffect(() => {
     // Dynamically import Leaflet
     const loadMap = async () => {
-      const L = await import('leaflet@1.9.4');
+      const L = await import('leaflet');
       
       if (!mapRef.current || leafletMapRef.current) return;
 
@@ -123,7 +123,7 @@ export function InteractiveSkyscraperMap() {
       if (!document.querySelector('link[href*="leaflet"]')) {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
-        link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        link.href = 'https://unpkg.com/leaflet/dist/leaflet.css';
         link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
         link.crossOrigin = '';
         document.head.appendChild(link);
